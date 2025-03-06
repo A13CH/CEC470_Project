@@ -9,7 +9,7 @@ Purpose: This will be the collection of sorting methods used for the sorting for
 from timer import timer
 
 @timer
-def bubblesort(arr):
+def bubblesort(arr) -> list:
     """Bubblesort Algorithm"""
     size = len(arr) # Defines the length of the array
 
@@ -19,9 +19,9 @@ def bubblesort(arr):
             if arr[i] > arr[j]:
                 arr[i], arr[j] = arr[j], arr[i]
                 swapped = True # If a number is larger swapped has happened
-            if not swapped: # If there is no swap break the for loop
-                break
-
+        if not swapped: # If there is no swap break the for loop
+            break
+    return arr
 
 @timer
 def selectionsort(arr):
@@ -33,8 +33,10 @@ def selectionsort(arr):
             if arr[j] < arr[min_idx]:
                 min_idx = j  # Update the minimum element
         arr[min_idx], arr[i] = arr[i], arr[min_idx]
-
+    return arr
 
 
 if __name__ == '__main__':
-    data = [64,34,25,12,22,11,90]
+    data = [5, 9, 7, 1, 2, 4, 3, 8, 6]
+    bubblesort(data)
+    print(data)
