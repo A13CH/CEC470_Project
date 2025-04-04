@@ -12,7 +12,7 @@ import time
 from functools import wraps
 from typing import Callable
 
-def timer(func: Callable) -> Callable:
+def timer(func: Callable, name = None) -> Callable:
     """Decorator function used to calculate execution time of a function"""
     @wraps(func)
     def wrapper(*args, **kwargs):
@@ -20,10 +20,11 @@ def timer(func: Callable) -> Callable:
         result = func(*args, **kwargs)
         end_time = time.time()
         elapsed_time = end_time - start_time
-        print(f"Function '{func.__name__}' executed in {elapsed_time:.4f} seconds")
+        print(f"Function '{name}' executed in {elapsed_time:.10f} seconds")
         # elapsed_time_ms = elapsed_time * 1000
         # print(f"Function '{func.__name__}' executed in {elapsed_time_ms:.4f} milliseconds")
         # elapsed_time_us = elapsed_time * 1000000
         # print(f"Function '{func.__name__}' executed in {elapsed_time_us:.4f} microseconds")
         return result
     return wrapper
+
