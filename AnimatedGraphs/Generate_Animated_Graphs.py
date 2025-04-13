@@ -4,7 +4,7 @@ To see the next animation, you have to close the current figure window. Currentl
 an animation for quick sort due to its complexity, if I can get it working I will add on to this file.
 """
 import animated_sorts as ap
-import AnimatedGraphs.animated_graphing as ga
+import animated_graphing as ga
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from json import load
