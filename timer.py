@@ -25,6 +25,6 @@ def timer(func: Callable, name = None) -> Callable:
         # print(f"Function '{func.__name__}' executed in {elapsed_time_ms:.4f} milliseconds")
         # elapsed_time_us = elapsed_time * 1000000
         # print(f"Function '{func.__name__}' executed in {elapsed_time_us:.4f} microseconds")
-        return result
+        return elapsed_time
     return wrapper
 
